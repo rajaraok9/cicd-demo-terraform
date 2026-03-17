@@ -41,7 +41,7 @@ jobs:
 
       # Terraform Apply
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="db_password=${{ secrets.DB_PASSWORD }}"
         working-directory: terraform
 
       # Setup Java
