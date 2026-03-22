@@ -26,4 +26,5 @@ module "eks" {
       subnet_ids = module.vpc.public_subnets
     }
   }
+
 }

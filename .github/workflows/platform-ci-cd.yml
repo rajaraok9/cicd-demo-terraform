@@ -30,23 +30,23 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}
 
-      # Install Terraform
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      # Terraform Init
-      - name: Terraform Init
-        run: terraform init
-        working-directory: terraform
-
-      # Terraform Apply
-      - name: Terraform Apply
-        run: |
-            terraform apply -auto-approve  \
-               -var="db_password=${{ secrets.DB_PASSWORD }}" \
-               -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" \
-               -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-        working-directory: terraform
+#      # Install Terraform
+#      - name: Setup Terraform
+#        uses: hashicorp/setup-terraform@v3
+#
+#      # Terraform Init
+#      - name: Terraform Init
+#        run: terraform init
+#        working-directory: terraform
+#
+#      # Terraform Apply
+#      - name: Terraform Apply
+#        run: |
+#            terraform apply -auto-approve  \
+#               -var="db_password=${{ secrets.DB_PASSWORD }}" \
+#               -var="aws_access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" \
+#               -var="aws_secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+#        working-directory: terraform
 
       # Setup Java
       - name: Setup Java
